@@ -36,9 +36,15 @@
     <ClCompile Include="qtsubprocessruntest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SubProcessRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="qtsubprocessruntest.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="subProcessRunner.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
