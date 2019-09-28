@@ -13,15 +13,15 @@
 #include <mutex>
 #include <iostream>
 #include <atomic>
-#ifdef QT_DLL
+#ifdef QT_CORE_LIB
 	#include <QObject>
 	#include <QDebug>
 #endif
 
 
 #ifdef _DEBUG 
-	#ifdef QT_DLL
-		#define	QDEBUG(TRACE)	qDebug() << TRACE;
+	#ifdef QT_CORE_LIB
+		#define	QDEBUG(TRACE)	qDebug() << TRACE
 	#else
 		#define	QDEBUG(TRACE)	
 	#endif // QT_DLL
@@ -31,7 +31,7 @@
 
 
 using std::string;
-#ifdef QT_DLL
+#ifdef QT_CORE_LIB
 	class SubProcessRunner :public QObject
 	{
 		Q_OBJECT
@@ -52,7 +52,7 @@ public:
 	bool stop();
 	//string wirteCmdtoSubprogramm();
 	virtual ~SubProcessRunner();
-#ifdef QT_DLL
+#ifdef QT_CORE_LIB
 	signals :
 			void signal_SendSubProcessStdoutContents(const QString& StdoutContents);
 #endif
@@ -83,15 +83,17 @@ private:
 	HANDLE							m_threadTriggerEventHandle		= { ::CreateEvent(nullptr,FALSE,FALSE,TEXT(""))};
 	std::mutex						m_threadSwitchmutext			= {};
 	volatile bool					m_bTerminateFlag				= { false };
+	CRITICAL_SECTION				m_critical_section				= {};
 };	
 
-class Mutex_guard 
+class CriticalSection_guard 
 {
 public:
-	explicit Mutex_guard(std::mutex &mutex) :m_guardmutex(mutex) { m_guardmutex.lock(); };
-	~Mutex_guard() { m_guardmutex.unlock(); };
+	explicit CriticalSection_guard(CRITICAL_SECTION &critical_section) :m_guardcritical_section(critical_section) { EnterCriticalSection(&m_guardcritical_section); };
+	~CriticalSection_guard() { ::LeaveCriticalSection(&m_guardcritical_section); };
+	CriticalSection_guard& operator=(CRITICAL_SECTION &critical_section) = delete;
 private:
-	std::mutex &m_guardmutex;
+	CRITICAL_SECTION &m_guardcritical_section;
 
 };
 
