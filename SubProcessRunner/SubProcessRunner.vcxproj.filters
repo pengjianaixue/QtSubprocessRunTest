@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="SubProcessRunner">
+      <UniqueIdentifier>{9c7bec0f-f314-4408-ba31-2e3580b3cd44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommandShellRunner">
+      <UniqueIdentifier>{319b56c0-e27a-40b9-9c7a-60cff30bdb25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -25,18 +31,24 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="subProcessRunner.h">
-      <Filter>头文件</Filter>
+      <Filter>SubProcessRunner</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandShellRunner.h">
+      <Filter>CommandShellRunner</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SubProcessRunner.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SubProcessRunner.cpp">
+      <Filter>SubProcessRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandShellRunner.cpp">
+      <Filter>CommandShellRunner</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

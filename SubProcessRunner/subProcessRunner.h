@@ -18,7 +18,11 @@
 	#include <QDebug>
 #endif
 
-
+#ifdef DYNAMICLIBEXPORT
+#define DYNAMICLIBEXPORT   __declspec(dllexport)
+#else
+#define DYNAMICLIBEXPORT  _declspec (dllimport)
+#endif
 #ifdef _DEBUG 
 	#ifdef QT_CORE_LIB
 		#define	QDEBUG(TRACE)	qDebug() << TRACE
@@ -28,15 +32,13 @@
 #else
 	#define	QDEBUG(TRACE)
 #endif // DEBUG
-
-
 using std::string;
 #ifdef QT_CORE_LIB
 	class SubProcessRunner :public QObject
 	{
 		Q_OBJECT
 #else
-	class SubProcessRunner
+	class DYNAMICLIBEXPORT SubProcessRunner
 	{
 #endif // QT_DLL
 public:

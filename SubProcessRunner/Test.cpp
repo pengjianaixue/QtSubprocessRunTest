@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include "subProcessRunner.h"
+#include "CommandShellRunner.h"
 #include <iostream>
 bool readSubPorcessOutputCallBack(const std::string &outputinfor,void* externparam)
 {
@@ -9,14 +10,16 @@ bool readSubPorcessOutputCallBack(const std::string &outputinfor,void* externpar
 int main()
 {
 	{
-		SubProcessRunner test;
+		CommandShellRunner test;
+		test.startRunCommand("python -u ./test.py");
+		/*SubProcessRunner test;
 		test.registerReadCallBackFuntion(readSubPorcessOutputCallBack);
 		test.startRun("python -u ./test.py");
 		Sleep(1000);
 		test.pause();
 		Sleep(1000);
 		test.resume();
-		test.waitForFinish();
+		test.waitForFinish();*/
 		
 	}
 	_CrtDumpMemoryLeaks();
