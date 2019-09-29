@@ -23,7 +23,7 @@
 	#ifdef QT_CORE_LIB
 		#define	QDEBUG(TRACE)	qDebug() << TRACE
 	#else
-		#define	QDEBUG(TRACE)	
+		#define	QDEBUG(TRACE) 	
 	#endif // QT_DLL
 #else
 	#define	QDEBUG(TRACE)
