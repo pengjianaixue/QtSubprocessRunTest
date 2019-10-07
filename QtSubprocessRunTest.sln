@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtSubprocessRunTest", "QtSu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SubProcessRunner", "SubProcessRunner\SubProcessRunner.vcxproj", "{35F1C76E-434E-41D9-B20F-18F754251D9E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SubprocessSpawn", "SubprocessSpawn\SubprocessSpawn.vcxproj", "{EBCBB383-2712-4F47-99EA-B32E76B340CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,6 +31,14 @@ Global
 		{35F1C76E-434E-41D9-B20F-18F754251D9E}.Release|x64.Build.0 = Release|x64
 		{35F1C76E-434E-41D9-B20F-18F754251D9E}.Release|x86.ActiveCfg = Release|Win32
 		{35F1C76E-434E-41D9-B20F-18F754251D9E}.Release|x86.Build.0 = Release|Win32
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Debug|x64.ActiveCfg = Debug|x64
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Debug|x64.Build.0 = Debug|x64
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Debug|x86.ActiveCfg = Debug|Win32
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Debug|x86.Build.0 = Debug|Win32
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Release|x64.ActiveCfg = Release|x64
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Release|x64.Build.0 = Release|x64
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Release|x86.ActiveCfg = Release|Win32
+		{EBCBB383-2712-4F47-99EA-B32E76B340CA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

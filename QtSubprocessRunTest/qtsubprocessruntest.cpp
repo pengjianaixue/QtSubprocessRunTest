@@ -39,8 +39,14 @@ void QtSubprocessRunTest::stopRunPyScript()
 
 void QtSubprocessRunTest::displayPyStdoutToBorwse(const QString &stdoutcontents)
 {
-	QString stdoutcontent = stdoutcontents;
-	stdoutcontent = stdoutcontent.replace(QRegExp(".*(\r\n\r\n)"),"\r\n");
+	QString stdoutcontent = std::move(stdoutcontents);
+	/*stdoutcontent = "this is test\r\n";*/
+	if (stdoutcontent.contains("\r\n\r\n"))
+	{
+		stdoutcontent = stdoutcontent.left(stdoutcontent.size() - 2);
+	}
 	this->ui.textBrowser->append(stdoutcontent);
+	this->ui.textBrowser->moveCursor(QTextCursor::End);
+	this->ui.textBrowser->textCursor().deletePreviousChar();
 	this->ui.textBrowser->update();
 }

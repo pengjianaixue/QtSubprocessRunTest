@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -27,12 +27,12 @@ class Ui_QtSubprocessRunTestClass
 {
 public:
     QWidget *centralWidget;
-    QFormLayout *formLayout;
+    QGridLayout *gridLayout;
     QPushButton *pushButton_Start;
     QSpacerItem *horizontalSpacer;
-    QTextBrowser *textBrowser;
     QPushButton *pushButton_Stop;
     QPushButton *pushButton_clean;
+    QTextBrowser *textBrowser;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -44,38 +44,38 @@ public:
         QtSubprocessRunTestClass->resize(600, 400);
         centralWidget = new QWidget(QtSubprocessRunTestClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        formLayout = new QFormLayout(centralWidget);
-        formLayout->setSpacing(6);
-        formLayout->setContentsMargins(11, 11, 11, 11);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         pushButton_Start = new QPushButton(centralWidget);
         pushButton_Start->setObjectName(QString::fromUtf8("pushButton_Start"));
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, pushButton_Start);
+        gridLayout->addWidget(pushButton_Start, 0, 0, 1, 1);
 
         horizontalSpacer = new QSpacerItem(498, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        formLayout->setItem(0, QFormLayout::FieldRole, horizontalSpacer);
-
-        textBrowser = new QTextBrowser(centralWidget);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-
-        formLayout->setWidget(3, QFormLayout::SpanningRole, textBrowser);
+        gridLayout->addItem(horizontalSpacer, 0, 1, 1, 1);
 
         pushButton_Stop = new QPushButton(centralWidget);
         pushButton_Stop->setObjectName(QString::fromUtf8("pushButton_Stop"));
 
-        formLayout->setWidget(1, QFormLayout::LabelRole, pushButton_Stop);
+        gridLayout->addWidget(pushButton_Stop, 1, 0, 1, 1);
 
         pushButton_clean = new QPushButton(centralWidget);
         pushButton_clean->setObjectName(QString::fromUtf8("pushButton_clean"));
 
-        formLayout->setWidget(2, QFormLayout::LabelRole, pushButton_clean);
+        gridLayout->addWidget(pushButton_clean, 2, 0, 1, 1);
+
+        textBrowser = new QTextBrowser(centralWidget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+
+        gridLayout->addWidget(textBrowser, 3, 0, 1, 2);
 
         QtSubprocessRunTestClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QtSubprocessRunTestClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 22));
+        menuBar->setGeometry(QRect(0, 0, 600, 23));
         QtSubprocessRunTestClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(QtSubprocessRunTestClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
