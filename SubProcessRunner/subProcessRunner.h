@@ -25,12 +25,12 @@
 #endif
 #ifdef _DEBUG 
 	#ifdef QT_CORE_LIB
-		#define	QDEBUG(TRACE)	qDebug() << TRACE
+		#define	DEBUGPRINT(TRACE)	qDebug() << QString(TRACE.c_str())
 	#else
-		#define	QDEBUG(TRACE) 	
+#define	DEBUGPRINT(TRACE)  std::cout<< 	TRACE <<std::endl;
 	#endif // QT_DLL
 #else
-	#define	QDEBUG(TRACE)
+	#define	DEBUGPRINT(TRACE)
 #endif // DEBUG
 using std::string;
 #ifdef QT_CORE_LIB

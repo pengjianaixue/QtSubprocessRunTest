@@ -19,21 +19,26 @@ QtSubprocessRunTest::QtSubprocessRunTest(QWidget *parent)
 	m_pyPath = QApplication::applicationDirPath() + "/test.py";
 	connect(this->ui.pushButton_Start, &QPushButton::clicked, this, &QtSubprocessRunTest::startRunPyScript);
 	connect(this->ui.pushButton_Stop, &QPushButton::clicked, this, &QtSubprocessRunTest::stopRunPyScript);
-	connect(&this->m_subProcessRunner, &SubProcessRunner::signal_SendSubProcessStdoutContents, this, &QtSubprocessRunTest::displayPyStdoutToBorwse);
+	connect(&this->m_subProcessRunnerWithSpawn, &SubprocessRunnerWithSpawn::sigals_sendSubProcessOutput, this, &QtSubprocessRunTest::displayPyStdoutToBorwse);
+	//connect(&this->m_subProcessRunner, &SubProcessRunner::signal_SendSubProcessStdoutContents, this, &QtSubprocessRunTest::displayPyStdoutToBorwse);
 	connect(this->ui.pushButton_clean, &QPushButton::clicked, this, [&] {ui.textBrowser->clear(); });
 }
 
 void QtSubprocessRunTest::startRunPyScript()
 { 
-	m_subProcessRunner.startRun(std::string("python -u ") +  R"(")" +  m_pyPath.toStdString() + R"(")");
+	m_subProcessRunnerWithSpawn.startRun(string(R"(")") + "C:\\Users\\eijpnae\\Documents\\Visual Studio 2015\\Projects\\QtSubprocessRunTest\\x64\\Debug\\SubprocessSpawn.exe" + R"(")" + " " +
+		m_subProcessRunnerWithSpawn.getNamePipeName() + " python " +R"(")" + m_pyPath.toStdString() + R"(")");
+	//m_subProcessRunner.startRun(std::string("python -u ") +  R"(")" +  m_pyPath.toStdString() + R"(")");
 }
 QtSubprocessRunTest::~QtSubprocessRunTest()
 {
-	m_subProcessRunner.stop();
+	m_subProcessRunnerWithSpawn.stop();
+	//m_subProcessRunner.stop();
 }
 void QtSubprocessRunTest::stopRunPyScript()
 {
-	m_subProcessRunner.stop();
+	m_subProcessRunnerWithSpawn.stop();
+	//m_subProcessRunner.stop();
 
 }
 

@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "subProcessRunner.h"
+#include "SubprocessRunnerWithSpawn.h"
 #include "ui_qtsubprocessruntest.h"
 
 class QtSubprocessRunTest : public QMainWindow
@@ -17,7 +18,8 @@ public slots:
 	void displayPyStdoutToBorwse(const QString &stdoutcontents);
 
 private:
-	Ui::QtSubprocessRunTestClass ui;
-	SubProcessRunner		m_subProcessRunner;
-	QString				    m_pyPath;
+	Ui::QtSubprocessRunTestClass	ui;
+	SubProcessRunner				m_subProcessRunner;
+	SubprocessRunnerWithSpawn		m_subProcessRunnerWithSpawn;
+	QString							m_pyPath;
 };
