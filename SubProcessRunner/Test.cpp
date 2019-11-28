@@ -10,8 +10,10 @@ bool readSubPorcessOutputCallBack(const std::string &outputinfor,void* externpar
 int main()
 {
 	{
-		CommandShellRunner test;
-		test.startRunCommand("python -u ./test.py");
+		AllocConsole();
+		SubProcessRunner test;
+		test.startRun("python  ./test.py");
+		test.waitForFinish();
 		/*SubProcessRunner test;
 		test.registerReadCallBackFuntion(readSubPorcessOutputCallBack);
 		test.startRun("python -u ./test.py");
