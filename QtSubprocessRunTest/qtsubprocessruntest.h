@@ -15,6 +15,7 @@ public:
 public slots:
 	void startRunPyScript();
 	void stopRunPyScript();
+	void pauseRunPyScript();
 	void displayPyStdoutToBorwse(const QString &stdoutcontents);
 
 private:
