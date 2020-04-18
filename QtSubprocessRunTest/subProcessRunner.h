@@ -52,7 +52,6 @@ public:
 	bool pause();
 	bool resume();
 	bool stop();
-	//string wirteCmdtoSubprogramm();
 	virtual ~SubProcessRunner();
 #ifdef QT_CORE_LIB
 	signals :
