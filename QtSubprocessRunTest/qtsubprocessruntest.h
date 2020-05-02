@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "subProcessRunner.h"
+#include "../SubProcessRunner/subProcessRunner.h"
 #include "SubprocessRunnerWithSpawn.h"
 #include "ui_qtsubprocessruntest.h"
 

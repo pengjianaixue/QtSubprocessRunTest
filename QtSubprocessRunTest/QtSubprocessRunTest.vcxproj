@@ -71,6 +71,7 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <CompileAsManaged>false</CompileAsManaged>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,9 +130,9 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\SubProcessRunner\SubProcessRunner.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="qtsubprocessruntest.cpp" />
-    <ClCompile Include="SubProcessRunner.cpp" />
     <ClCompile Include="SubprocessRunnerWithSpawn.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,10 +145,10 @@
     <QtRcc Include="qtsubprocessruntest.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="subProcessRunner.h" />
+    <QtMoc Include="SubprocessRunnerWithSpawn.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="SubprocessRunnerWithSpawn.h" />
+    <QtMoc Include="..\SubProcessRunner\subProcessRunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

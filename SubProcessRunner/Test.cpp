@@ -12,7 +12,11 @@ int main()
 	{
 		AllocConsole();
 		SubProcessRunner test;
-		test.startRun("python  ./test.py");
+		test.startRun("python -u ./test.py");
+		Sleep(3000);
+		bool re = test.pause();
+		Sleep(3000);
+		bool ret = test.resume();
 		test.waitForFinish();
 		/*SubProcessRunner test;
 		test.registerReadCallBackFuntion(readSubPorcessOutputCallBack);
