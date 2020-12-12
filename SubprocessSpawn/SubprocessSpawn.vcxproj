@@ -22,7 +22,7 @@
     <ProjectGuid>{EBCBB383-2712-4F47-99EA-B32E76B340CA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SubprocessSpawn</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
